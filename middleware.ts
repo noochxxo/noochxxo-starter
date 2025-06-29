@@ -13,13 +13,12 @@ export async function middleware(request: NextRequest) {
     p.test(pathname)
   );
 
-  // TODO: need to check if sessionCookie is admin
   if (isProtectedAdminRoute && !sessionCookie) {
-    return NextResponse.redirect(new URL("/", request.url));
+    return NextResponse.redirect(new URL("/unauthorized/401", request.url));
   }
 
   if (isProtectedUserRoute && !sessionCookie) {
-    return NextResponse.redirect(new URL("/sign-in", request.url));
+    return NextResponse.redirect(new URL("/unauthorized/401", request.url));
   }
 
   let res = NextResponse.next();
@@ -41,12 +40,13 @@ export async function middleware(request: NextRequest) {
         expires: expiresInOneDay,
       });
 
+      // TODO: Figure out if this belongs here or somewhere else
       if (isProtectedAdminRoute && !parsed.admin) {
-        return NextResponse.redirect(new URL("/user/dashboard", request.url));
+        return NextResponse.redirect(new URL("/unauthorized/403", request.url));
       }
 
       if (isProtectedUserRoute && parsed.admin) {
-        return NextResponse.redirect(new URL("/admin/dashboard", request.url));
+        return NextResponse.redirect(new URL("/unauthorized/403", request.url));
       }
 
     } catch (error) {
