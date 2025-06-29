@@ -1,26 +1,85 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Custom Colors */
+  --color-cosmic-50: #f8f7ff;
+  --color-cosmic-100: #f0edff;
+  --color-cosmic-200: #e4dcff;
+  --color-cosmic-300: #d1c4ff;
+  --color-cosmic-400: #b8a1ff;
+  --color-cosmic-500: #9b77ff;
+  --color-cosmic-600: #8b5cf6;
+  --color-cosmic-700: #7c3aed;
+  --color-cosmic-800: #6d28d9;
+  --color-cosmic-900: #5b21b6;
+  --color-cosmic-950: #1e0a3c;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-nebula-50: #fef7ff;
+  --color-nebula-100: #fdedff;
+  --color-nebula-200: #fbd5ff;
+  --color-nebula-300: #f7b0ff;
+  --color-nebula-400: #f178ff;
+  --color-nebula-500: #e935ff;
+  --color-nebula-600: #c855d6;
+  --color-nebula-700: #a855b8;
+  --color-nebula-800: #86479a;
+  --color-nebula-900: #6b3d7c;
+  --color-nebula-950: #2d1b3d;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-stardust-50: #eff6ff;
+  --color-stardust-100: #dbeafe;
+  --color-stardust-200: #bfdbfe;
+  --color-stardust-300: #93c5fd;
+  --color-stardust-400: #60a5fa;
+  --color-stardust-500: #3b82f6;
+  --color-stardust-600: #2563eb;
+  --color-stardust-700: #1d4ed8;
+  --color-stardust-800: #1e40af;
+  --color-stardust-900: #1e3a8a;
+  --color-stardust-950: #0f1629;
+
+  /* Custom Backdrop Blur */
+  --backdrop-blur-xs: 2px;
+
+  
+
+  /* Custom Animations */
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+
+  --animate-float: float 8s ease-in-out infinite;
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes glow {
+    0% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.5); }
+    100% { box-shadow: 0 0 30px rgba(139, 92, 246, 0.8), 0 0 40px rgba(139, 92, 246, 0.3); }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@utility btn {
+    @apply inline-flex items-center justify-center font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+@utility primary-btn {
+    @apply btn bg-gradient-to-r from-cosmic-600 to-nebula-600 text-white hover:from-cosmic-500 hover:to-nebula-500 focus:ring-cosmic-500;
+  }
+
+@utility secondary-btn {
+    @apply btn bg-stardust-600 text-white hover:bg-stardust-500 focus:ring-stardust-500;
+  }
+
+@utility outline-btn {
+    @apply btn border-2 border-cosmic-600 text-cosmic-600 hover:bg-cosmic-600 hover:text-white focus:ring-cosmic-500;
+  }
+
+@utility card {
+  @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6;
+}
+
+@utility input {
+  @apply w-full px-4 py-11 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cosmic-500 focus:border-transparent transition-all duration-300;
 }
