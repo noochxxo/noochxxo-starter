@@ -1,4 +1,5 @@
-import React from 'react';
+'use client'
+
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Shield, ArrowLeft, Home, User, AlertTriangle, Lock } from 'lucide-react';
@@ -9,7 +10,7 @@ import useSWR from 'swr';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-export function ForbiddenPage() {
+export default function ForbiddenPage() {
   const { data: user } = useSWR<CurrentUser>('/api/user', fetcher);
   const router = useRouter();
   return (

@@ -1,11 +1,12 @@
-import React from 'react';
+'use client'
+
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Rocket, ArrowLeft, Home, Search, Compass } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
-export function NotFoundPage() {
+export default function NotFoundPage() {
   const router = useRouter();
   return (
     <div className="min-h-screen bg-gradient-to-br from-cosmic-950 via-nebula-950 to-stardust-950 flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
