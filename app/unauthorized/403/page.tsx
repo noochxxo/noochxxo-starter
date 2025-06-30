@@ -1,22 +1,36 @@
 'use client'
 
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation'
 import { Shield, ArrowLeft, Home, User, AlertTriangle, Lock } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { User as CurrentUser } from '@/lib/db/schemas';
 import useSWR from 'swr';
+import { useEffect } from 'react';
+
+import { Loading } from '@/components/shared/Loading';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function ForbiddenPage() {
   const { data: user } = useSWR<CurrentUser>('/api/user', fetcher);
   const router = useRouter();
+
+   useEffect(() => {
+    if (!user) {
+      router.replace('/');
+    }
+  }, [user, router]);
+
+  if (!user) {
+    return <Loading />
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cosmic-950 via-nebula-950 to-stardust-950 flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
+    <div className="min-h-screen bg-gradient-to-br from-cosmic-950 via-nebula-950 to-stardust-950 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20">
       <div className="max-w-lg w-full">
-        <Card className="p-8 text-center">
+        <Card className="card p-8 text-center">
           {/* Animated 403 */}
           <div className="mb-8">
             <div className="relative">
@@ -93,7 +107,7 @@ export default function ForbiddenPage() {
             <Button
               asChild
               size="lg"
-              className="justify-center w-full"
+              className="justify-center w-full primary-btn py-6"
             >
               <Link href={user?.role === 'admin' ? '/admin/dashboard' : '/user/dashboard'}>
                 <User />
@@ -105,7 +119,7 @@ export default function ForbiddenPage() {
               asChild
               variant="outline"
               size="lg"
-              className="justify-center w-full"
+              className="justify-center w-full outline-btn py-6"
             >
               <Link href='/'>
                 <Home />
@@ -122,7 +136,7 @@ export default function ForbiddenPage() {
                 onClick={() => router.back()}
                 variant="ghost"
                 size="sm"
-                className="justify-center flex-1"
+                className="justify-center flex-1 ghost-btn py-6"
               >
                 <ArrowLeft />
                 Go Back
@@ -131,7 +145,7 @@ export default function ForbiddenPage() {
                 asChild
                 variant="ghost"
                 size="sm"
-                className="justify-center flex-1"
+                className="justify-center flex-1 ghost-btn py-6"
               >
                 {/* TODO: change email contact to group admin or something */}
                 <Link href="mailto:support@cosmicapp.com">

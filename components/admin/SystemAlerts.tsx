@@ -16,7 +16,7 @@ const SystemAlerts = ({
   systemAlerts
 }: Props) => {
   return (
-    <Card className="p-6">
+    <Card className="card p-6">
       <h2 className="text-xl font-semibold text-white mb-4">System Alerts</h2>
       <div className="space-y-3">
         {systemAlerts.map((alert, index) => (

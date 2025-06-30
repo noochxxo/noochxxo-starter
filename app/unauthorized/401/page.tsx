@@ -9,9 +9,9 @@ import { Button } from '@/components/ui/button';
 export default function UnauthorizedPage() {
   const router = useRouter();
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cosmic-950 via-nebula-950 to-stardust-950 flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
+    <div className="min-h-screen bg-gradient-to-br from-cosmic-950 via-nebula-950 to-stardust-950 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20">
       <div className="max-w-lg w-full">
-        <Card className="p-8 text-center">
+        <Card className="card p-8 text-center">
           {/* Animated 401 */}
           <div className="mb-8">
             <div className="relative">
@@ -67,7 +67,7 @@ export default function UnauthorizedPage() {
             <Button
               asChild
               size="lg"
-              className="justify-center w-full"
+              className="justify-center w-full primary-btn py-6"
             >
               <Link href='/sign-in'>
               <LogIn />
@@ -79,7 +79,7 @@ export default function UnauthorizedPage() {
               asChild
               variant="outline"
               size="lg"
-              className="justify-center w-full"
+              className="justify-center w-full outline-btn py-6"
             >
               <Link href='/sign-up'>
                 <User />
@@ -95,7 +95,7 @@ export default function UnauthorizedPage() {
                 asChild
                 variant="ghost"
                 size="sm"
-                className="justify-center flex-1"
+                className="justify-center flex-1 ghost-btn py-6"
               >
                 <Link href='/'>
                   <Home />
@@ -106,7 +106,7 @@ export default function UnauthorizedPage() {
                 onClick={() => router.back()}
                 variant="ghost"
                 size="sm"
-                className="justify-center flex-1"
+                className="justify-center flex-1 ghost-btn py-6"
               >
                 <ArrowLeft />
                 Go Back

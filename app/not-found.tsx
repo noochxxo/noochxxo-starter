@@ -9,9 +9,9 @@ import { Button } from '@/components/ui/button';
 export default function NotFoundPage() {
   const router = useRouter();
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cosmic-950 via-nebula-950 to-stardust-950 flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
+    <div className="min-h-screen bg-gradient-to-br from-cosmic-950 via-nebula-950 to-stardust-950 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20">
       <div className="max-w-lg w-full">
-        <Card className="p-8 text-center">
+        <Card className="p-8 text-center card">
           {/* Animated 404 */}
           <div className="mb-8">
             <div className="relative">
@@ -45,18 +45,24 @@ export default function NotFoundPage() {
           {/* Navigation Suggestions */}
           <div className="mb-8">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
-              <div className="bg-white/5 rounded-lg p-3 border border-white/10">
+              <Link href='/search'>
+                <div className="bg-white/5 rounded-lg p-3 border border-white/10">
                 <Search className="h-4 w-4 text-cosmic-400 mx-auto mb-1" />
                 <p className="text-gray-300">Search</p>
               </div>
-              <div className="bg-white/5 rounded-lg p-3 border border-white/10">
+              </Link>
+              <Link href='/'>
+                <div className="bg-white/5 rounded-lg p-3 border border-white/10">
                 <Home className="h-4 w-4 text-nebula-400 mx-auto mb-1" />
                 <p className="text-gray-300">Home</p>
               </div>
-              <div className="bg-white/5 rounded-lg p-3 border border-white/10">
+              </Link>
+              <Link href='/navigate'>
+                <div className="bg-white/5 rounded-lg p-3 border border-white/10">
                 <Compass className="h-4 w-4 text-stardust-400 mx-auto mb-1" />
                 <p className="text-gray-300">Navigate</p>
               </div>
+              </Link>
             </div>
           </div>
 
@@ -65,7 +71,7 @@ export default function NotFoundPage() {
             <Button
               asChild
               size="lg"
-              className="justify-center w-full"
+              className="justify-center w-full primary-btn py-6"
             >
               <Link href='/'>
                 <Home />
@@ -77,7 +83,7 @@ export default function NotFoundPage() {
               onClick={() => router.back()}
               variant="outline"
               size="lg"
-              className="justify-center w-full"
+              className="justify-center w-full outline-btn py-6"
             >
                 <ArrowLeft />
                 Go Back
@@ -92,7 +98,7 @@ export default function NotFoundPage() {
                   asChild
                   variant="ghost"
                   size="sm"
-                  className="justify-center flex-1"
+                  className="justify-center flex-1 ghost-btn py-6"
                 >
                   {/* TODO: Check if admin and change route */}
                   <Link href='/user/dashboard'>
@@ -103,7 +109,7 @@ export default function NotFoundPage() {
                   asChild
                   variant="ghost"
                   size="sm"
-                  className="justify-center flex-1"
+                  className="justify-center flex-1 ghost-btn py-6"
                 >
                   <Link href='/sign-in'>
                     Sign In

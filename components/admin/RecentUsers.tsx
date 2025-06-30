@@ -19,10 +19,10 @@ const RecentUsers = ({
 }: Props) => {
   return (
     <div className="lg:col-span-2">
-      <Card className="p-6">
+      <Card className="card p-6">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl font-semibold text-white">Recent Users</h2>
-          <Button variant="outline" size="sm">
+          <Button variant="outline" size="sm" className="outline-btn">
             Manage Users
           </Button>
         </div>

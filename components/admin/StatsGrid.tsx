@@ -22,7 +22,7 @@ const StatsGrid = ({ stats }: Props) => {
       {stats.map((stat) => (
         <Card
           key={stat.name}
-          className="p-6 hover:scale-105 transition-transform duration-300"
+          className="card p-6 hover:scale-105 transition-transform duration-300"
         >
           <div className="flex items-center justify-between">
             <div>

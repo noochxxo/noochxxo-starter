@@ -22,29 +22,29 @@ const QuickActions = ({
 }: Props) => {
   return (
     <div className="space-y-6">
-      <Card className="p-6">
+      <Card className="card p-6">
         <h2 className="text-xl font-semibold text-white mb-4">Quick Actions</h2>
         <div className="space-y-3">
-          <Button variant="outline" className="justify-start w-full">
+          <Button variant="outline" className="justify-start w-full outline-btn py-6">
             <Rocket />
             Create New Project
           </Button>
-          <Button variant="outline" className="justify-start w-full">
+          <Button variant="outline" className="justify-start w-full outline-btn py-6">
             <Users />
             Invite Team Member
           </Button>
-          <Button variant="outline" className="justify-start w-full">
+          <Button variant="outline" className="justify-start w-full outline-btn py-6">
             <BarChart3 />
             View Analytics
           </Button>
-          <Button variant="outline" className="justify-start w-full">
+          <Button variant="outline" className="justify-start w-full outline-btn py-6">
             <Settings />
             Account Settings
           </Button>
         </div>
       </Card>
 
-      <Card className="p-6">
+      <Card className="card p-6">
         <h2 className="text-xl font-semibold text-white mb-4">
           Account Overview
         </h2>

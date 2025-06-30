@@ -42,13 +42,23 @@
   /* Custom Backdrop Blur */
   --backdrop-blur-xs: 2px;
 
-  
-
   /* Custom Animations */
   --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-glow: glow 2s ease-in-out infinite alternate;
-
+  --animate-loading-bar: loadingBar 3s ease-in-out infinite;
   --animate-float: float 8s ease-in-out infinite;
+
+  @keyframes loadingBar {
+    0%: { width: '0%'; }
+    50%: { width: '75%'; }
+    100%: { width: '100%'; }
+  }
+
+  @keyframes fadeIn {
+    0%, 100%: { opacity: '0.5'; }
+    50%: { opacity: '1'; }    
+  }
+
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
@@ -76,8 +86,12 @@
     @apply btn border-2 border-cosmic-600 text-cosmic-600 hover:bg-cosmic-600 hover:text-white focus:ring-cosmic-500;
   }
 
+@utility ghost-btn {
+  @apply btn text-cosmic-600 hover:bg-cosmic-50 focus:ring-cosmic-500;
+}
+
 @utility card {
-  @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-6;
+  @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-xl px-6;
 }
 
 @utility input {

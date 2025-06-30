@@ -21,7 +21,7 @@ const StatsGrid = ({
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {usersStats.map((stat) => (
-            <Card key={stat.name} className="p-6 hover:scale-105 transition-transform duration-300">
+            <Card key={stat.name} className="card p-6 hover:scale-105 transition-transform duration-300">
               <div className="flex items-center">
                 <div className={`p-3 rounded-lg bg-gradient-to-r ${stat.color}`}>
                   <stat.icon className="h-6 w-6 text-white" />
