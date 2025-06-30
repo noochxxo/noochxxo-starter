@@ -7,7 +7,7 @@ import {
   integer,
   pgEnum,
 } from 'drizzle-orm/pg-core';
-import { relations } from 'drizzle-orm';
+import { ProductWithFeatures, UserSubscription, UserTokens } from '.';
 
 export const rolesEnum = pgEnum("roles", ["guest", "member", "admin"]);
 
@@ -30,18 +30,17 @@ export const activityLogs = pgTable('activity_logs', {
   ipAddress: varchar('ip_address', { length: 45 }),
 });
 
-
-export const activityLogsRelations = relations(activityLogs, ({ one }) => ({
-  user: one(users, {
-    fields: [activityLogs.userId],
-    references: [users.id],
-  }),
-}));
-
 export type User = typeof users.$inferSelect;
 export type NewUser = typeof users.$inferInsert;
 export type ActivityLog = typeof activityLogs.$inferSelect;
 export type NewActivityLog = typeof activityLogs.$inferInsert;
+
+export type UserWithSubscription = User & {
+  subscription?: UserSubscription & {
+    product: ProductWithFeatures;
+  };
+  tokens?: UserTokens;
+};
 
 export enum ActivityType {
   SIGN_UP = 'SIGN_UP',
@@ -50,4 +49,6 @@ export enum ActivityType {
   UPDATE_PASSWORD = 'UPDATE_PASSWORD',
   DELETE_ACCOUNT = 'DELETE_ACCOUNT',
   UPDATE_ACCOUNT = 'UPDATE_ACCOUNT',
+  PURCHASED_TOKENS = 'PURCHASED_TOKENS',
+  PURCHASED_SUBSCRIPTION = 'PURCHASED_SUBSCRIPTION'
 }
