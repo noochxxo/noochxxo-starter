@@ -42,6 +42,7 @@ export type UserWithSubscription = User & {
   tokens?: UserTokens;
 };
 
+// Use in actions
 export enum ActivityType {
   SIGN_UP = 'SIGN_UP',
   SIGN_IN = 'SIGN_IN',
