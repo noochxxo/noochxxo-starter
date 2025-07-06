@@ -151,12 +151,14 @@ export default function HomePage() {
               Join thousands of teams already building the future with our platform.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/sign-up">
-                <Button size="lg" className="text-lg px-8 py-4 primary-btn">
-                  <Rocket />
-                  Start Your Journey
+              
+                <Button asChild size="lg" className="text-lg px-8 py-4 primary-btn">
+                  <Link href="/sign-up">
+                    <Rocket />
+                    Start Your Journey
+                  </Link>
                 </Button>
-              </Link>
+              
               <Button variant="outline" size="lg" className="text-lg px-8 py-4 outline-btn">
                 Schedule Demo
               </Button>
