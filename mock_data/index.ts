@@ -7,6 +7,7 @@ import {
   Code,
   Coffee,
   Cpu,
+  CreditCard,
   Crown,
   Database,
   Globe,
@@ -15,7 +16,9 @@ import {
   Layers,
   Package,
   Palette,
+  Receipt,
   Rocket,
+  Settings,
   Shield,
   Shirt,
   Smartphone,
@@ -603,184 +606,346 @@ export const faqs = [
 ];
 
 export const products = [
-    {
-      id: '1',
-      name: 'Cosmic Explorer T-Shirt',
-      description: 'Premium cotton tee with holographic cosmic design that shifts colors in different lighting.',
-      price: 29.99,
-      originalPrice: 39.99,
-      image: 'https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg',
-      category: 'apparel',
-      rating: 4.8,
-      reviews: 124,
-      colors: [
-        { name: 'Black', value: '#000000' },
-        { name: 'Navy', value: '#1e3a8a' },
-        { name: 'Purple', value: '#7c3aed' },
-        { name: 'White', value: '#ffffff' }
-      ],
-      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
-      inStock: true,
-      featured: true,
-      badge: 'Best Seller',
-      requiresSize: true,
-      requiresColor: true
-    },
-    {
-      id: '2',
-      name: 'Nebula Hoodie',
-      description: 'Ultra-soft fleece hoodie with embroidered nebula constellation pattern.',
-      price: 59.99,
-      image: 'https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg',
-      category: 'apparel',
-      rating: 4.9,
-      reviews: 89,
-      colors: [
-        { name: 'Black', value: '#000000' },
-        { name: 'Charcoal', value: '#374151' },
-        { name: 'Purple', value: '#7c3aed' }
-      ],
-      sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-      inStock: true,
-      featured: true,
-      badge: 'New',
-      requiresSize: true,
-      requiresColor: true
-    },
-    {
-      id: '3',
-      name: 'Stardust Coffee Mug',
-      description: 'Heat-reactive ceramic mug that reveals hidden constellation patterns when hot.',
-      price: 19.99,
-      image: 'https://images.pexels.com/photos/6347888/pexels-photo-6347888.jpeg',
-      category: 'accessories',
-      rating: 4.7,
-      reviews: 203,
-      colors: [
-        { name: 'Black', value: '#000000' },
-        { name: 'White', value: '#ffffff' },
-        { name: 'Blue', value: '#3b82f6' }
-      ],
-      sizes: ['11oz', '15oz'],
-      inStock: true,
-      featured: false,
-      requiresSize: true,
-      requiresColor: true
-    },
-    {
-      id: '4',
-      name: 'Cosmic Laptop Sleeve',
-      description: 'Padded laptop sleeve with water-resistant cosmic print design.',
-      price: 34.99,
-      originalPrice: 44.99,
-      image: 'https://images.pexels.com/photos/4158/apple-iphone-smartphone-desk.jpg',
-      category: 'tech',
-      rating: 4.6,
-      reviews: 67,
-      colors: [
-        { name: 'Galaxy', value: '#4c1d95' },
-        { name: 'Nebula', value: '#7c3aed' },
-        { name: 'Stardust', value: '#3b82f6' }
-      ],
-      sizes: ['13"', '15"', '17"'],
-      inStock: true,
-      featured: false,
-      badge: 'Sale',
-      requiresSize: true,
-      requiresColor: true
-    },
-    {
-      id: '5',
-      name: 'Galaxy Snapback Hat',
-      description: 'Adjustable snapback with 3D embroidered galaxy logo and premium materials.',
-      price: 24.99,
-      image: 'https://images.pexels.com/photos/1124465/pexels-photo-1124465.jpeg',
-      category: 'accessories',
-      rating: 4.5,
-      reviews: 156,
-      colors: [
-        { name: 'Black', value: '#000000' },
-        { name: 'Navy', value: '#1e3a8a' },
-        { name: 'White', value: '#ffffff' }
-      ],
-      sizes: ['One Size'],
-      inStock: true,
-      featured: false,
-      requiresSize: false, // One size fits all
-      requiresColor: true
-    },
-    {
-      id: '6',
-      name: 'Cosmic Sticker Pack',
-      description: 'Set of 12 holographic stickers featuring cosmic designs and logos.',
-      price: 9.99,
-      image: 'https://images.pexels.com/photos/6069112/pexels-photo-6069112.jpeg',
-      category: 'accessories',
-      rating: 4.9,
-      reviews: 312,
-      colors: [{ name: 'Holographic', value: 'linear-gradient(45deg, #ff0080, #ff8c00, #40e0d0)' }],
-      sizes: ['Standard'],
-      inStock: true,
-      featured: true,
-      badge: 'Popular',
-      requiresSize: false, // Standard size
-      requiresColor: false // Only one color option
-    },
-    {
-      id: '7',
-      name: 'Nebula Backpack',
-      description: 'Durable backpack with cosmic print, laptop compartment, and USB charging port.',
-      price: 79.99,
-      image: 'https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg',
-      category: 'accessories',
-      rating: 4.8,
-      reviews: 94,
-      colors: [
-        { name: 'Black', value: '#000000' },
-        { name: 'Purple', value: '#7c3aed' },
-        { name: 'Blue', value: '#3b82f6' }
-      ],
-      sizes: ['One Size'],
-      inStock: false,
-      featured: false,
-      requiresSize: false, // One size
-      requiresColor: true
-    },
-    {
-      id: '8',
-      name: 'Cosmic Phone Case',
-      description: 'Protective phone case with cosmic design and wireless charging compatibility.',
-      price: 16.99,
-      originalPrice: 24.99,
-      image: 'https://images.pexels.com/photos/4666748/pexels-photo-4666748.jpeg',
-      category: 'tech',
-      rating: 4.4,
-      reviews: 178,
-      colors: [
-        { name: 'Galaxy', value: '#4c1d95' },
-        { name: 'Nebula', value: '#7c3aed' },
-        { name: 'Clear', value: 'transparent' }
-      ],
-      sizes: ['iPhone 14/15', 'iPhone 14/15 Pro', 'Samsung Galaxy S24', 'Google Pixel 8'],
-      inStock: true,
-      featured: false,
-      badge: 'Sale',
-      requiresSize: true,
-      requiresColor: true
-    }
-  ];
+  {
+    id: "1",
+    name: "Cosmic Explorer T-Shirt",
+    description:
+      "Premium cotton tee with holographic cosmic design that shifts colors in different lighting.",
+    price: 29.99,
+    originalPrice: 39.99,
+    image: "https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg",
+    category: "apparel",
+    rating: 4.8,
+    reviews: 124,
+    colors: [
+      { name: "Black", value: "#000000" },
+      { name: "Navy", value: "#1e3a8a" },
+      { name: "Purple", value: "#7c3aed" },
+      { name: "White", value: "#ffffff" },
+    ],
+    sizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    inStock: true,
+    featured: true,
+    badge: "Best Seller",
+    requiresSize: true,
+    requiresColor: true,
+  },
+  {
+    id: "2",
+    name: "Nebula Hoodie",
+    description:
+      "Ultra-soft fleece hoodie with embroidered nebula constellation pattern.",
+    price: 59.99,
+    image: "https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg",
+    category: "apparel",
+    rating: 4.9,
+    reviews: 89,
+    colors: [
+      { name: "Black", value: "#000000" },
+      { name: "Charcoal", value: "#374151" },
+      { name: "Purple", value: "#7c3aed" },
+    ],
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    inStock: true,
+    featured: true,
+    badge: "New",
+    requiresSize: true,
+    requiresColor: true,
+  },
+  {
+    id: "3",
+    name: "Stardust Coffee Mug",
+    description:
+      "Heat-reactive ceramic mug that reveals hidden constellation patterns when hot.",
+    price: 19.99,
+    image: "https://images.pexels.com/photos/6347888/pexels-photo-6347888.jpeg",
+    category: "accessories",
+    rating: 4.7,
+    reviews: 203,
+    colors: [
+      { name: "Black", value: "#000000" },
+      { name: "White", value: "#ffffff" },
+      { name: "Blue", value: "#3b82f6" },
+    ],
+    sizes: ["11oz", "15oz"],
+    inStock: true,
+    featured: false,
+    requiresSize: true,
+    requiresColor: true,
+  },
+  {
+    id: "4",
+    name: "Cosmic Laptop Sleeve",
+    description:
+      "Padded laptop sleeve with water-resistant cosmic print design.",
+    price: 34.99,
+    originalPrice: 44.99,
+    image:
+      "https://images.pexels.com/photos/4158/apple-iphone-smartphone-desk.jpg",
+    category: "tech",
+    rating: 4.6,
+    reviews: 67,
+    colors: [
+      { name: "Galaxy", value: "#4c1d95" },
+      { name: "Nebula", value: "#7c3aed" },
+      { name: "Stardust", value: "#3b82f6" },
+    ],
+    sizes: ['13"', '15"', '17"'],
+    inStock: true,
+    featured: false,
+    badge: "Sale",
+    requiresSize: true,
+    requiresColor: true,
+  },
+  {
+    id: "5",
+    name: "Galaxy Snapback Hat",
+    description:
+      "Adjustable snapback with 3D embroidered galaxy logo and premium materials.",
+    price: 24.99,
+    image: "https://images.pexels.com/photos/1124465/pexels-photo-1124465.jpeg",
+    category: "accessories",
+    rating: 4.5,
+    reviews: 156,
+    colors: [
+      { name: "Black", value: "#000000" },
+      { name: "Navy", value: "#1e3a8a" },
+      { name: "White", value: "#ffffff" },
+    ],
+    sizes: ["One Size"],
+    inStock: true,
+    featured: false,
+    requiresSize: false, // One size fits all
+    requiresColor: true,
+  },
+  {
+    id: "6",
+    name: "Cosmic Sticker Pack",
+    description:
+      "Set of 12 holographic stickers featuring cosmic designs and logos.",
+    price: 9.99,
+    image: "https://images.pexels.com/photos/6069112/pexels-photo-6069112.jpeg",
+    category: "accessories",
+    rating: 4.9,
+    reviews: 312,
+    colors: [
+      {
+        name: "Holographic",
+        value: "linear-gradient(45deg, #ff0080, #ff8c00, #40e0d0)",
+      },
+    ],
+    sizes: ["Standard"],
+    inStock: true,
+    featured: true,
+    badge: "Popular",
+    requiresSize: false, // Standard size
+    requiresColor: false, // Only one color option
+  },
+  {
+    id: "7",
+    name: "Nebula Backpack",
+    description:
+      "Durable backpack with cosmic print, laptop compartment, and USB charging port.",
+    price: 79.99,
+    image: "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg",
+    category: "accessories",
+    rating: 4.8,
+    reviews: 94,
+    colors: [
+      { name: "Black", value: "#000000" },
+      { name: "Purple", value: "#7c3aed" },
+      { name: "Blue", value: "#3b82f6" },
+    ],
+    sizes: ["One Size"],
+    inStock: false,
+    featured: false,
+    requiresSize: false, // One size
+    requiresColor: true,
+  },
+  {
+    id: "8",
+    name: "Cosmic Phone Case",
+    description:
+      "Protective phone case with cosmic design and wireless charging compatibility.",
+    price: 16.99,
+    originalPrice: 24.99,
+    image: "https://images.pexels.com/photos/4666748/pexels-photo-4666748.jpeg",
+    category: "tech",
+    rating: 4.4,
+    reviews: 178,
+    colors: [
+      { name: "Galaxy", value: "#4c1d95" },
+      { name: "Nebula", value: "#7c3aed" },
+      { name: "Clear", value: "transparent" },
+    ],
+    sizes: [
+      "iPhone 14/15",
+      "iPhone 14/15 Pro",
+      "Samsung Galaxy S24",
+      "Google Pixel 8",
+    ],
+    inStock: true,
+    featured: false,
+    badge: "Sale",
+    requiresSize: true,
+    requiresColor: true,
+  },
+];
 
-  export const categories = [
-    { id: 'all', name: 'All Products', icon: Package },
-    { id: 'apparel', name: 'Apparel', icon: Shirt },
-    { id: 'accessories', name: 'Accessories', icon: Coffee },
-    { id: 'tech', name: 'Tech', icon: Laptop },
-  ];
+export const categories = [
+  { id: "all", name: "All Products", icon: Package },
+  { id: "apparel", name: "Apparel", icon: Shirt },
+  { id: "accessories", name: "Accessories", icon: Coffee },
+  { id: "tech", name: "Tech", icon: Laptop },
+];
 
-  export const sortOptions = [
-    { value: 'featured', label: 'Featured' },
-    { value: 'price-low', label: 'Price: Low to High' },
-    { value: 'price-high', label: 'Price: High to Low' },
-    { value: 'rating', label: 'Highest Rated' },
-    { value: 'newest', label: 'Newest' },
+export const sortOptions = [
+  { value: "featured", label: "Featured" },
+  { value: "price-low", label: "Price: Low to High" },
+  { value: "price-high", label: "Price: High to Low" },
+  { value: "rating", label: "Highest Rated" },
+  { value: "newest", label: "Newest" },
+];
+
+export const currentSubscription = {
+  id: "sub_1",
+  planName: "Pro Plan",
+  planType: "monthly",
+  price: 29,
+  status: "active",
+  nextBillingDate: "2024-02-15",
+  startDate: "2024-01-15",
+  features: [
+    "Unlimited Projects",
+    "100GB Storage",
+    "Priority Support",
+    "Advanced Analytics",
+    "Team Collaboration",
+  ],
+  icon: Crown,
+  gradient: "from-cosmic-600 to-nebula-600",
+};
+
+export const availablePlans = [
+  {
+    name: "Starter",
+    price: { monthly: 9, yearly: 90 },
+    features: ["5 Projects", "10GB Storage", "Basic Support"],
+    icon: Zap,
+    gradient: "from-blue-600 to-cyan-600",
+    popular: false,
+  },
+  {
+    name: "Pro",
+    price: { monthly: 29, yearly: 290 },
+    features: [
+      "Unlimited Projects",
+      "100GB Storage",
+      "Priority Support",
+      "Advanced Analytics",
+    ],
+    icon: Crown,
+    gradient: "from-cosmic-600 to-nebula-600",
+    popular: true,
+  },
+  {
+    name: "Enterprise",
+    price: { monthly: 99, yearly: 990 },
+    features: [
+      "Everything in Pro",
+      "1TB Storage",
+      "24/7 Support",
+      "Custom Integrations",
+    ],
+    icon: Star,
+    gradient: "from-purple-600 to-pink-600",
+    popular: false,
+  },
+];
+
+export const purchases = [
+  {
+    id: "inv_001",
+    type: "subscription",
+    itemName: "Pro Plan - Monthly",
+    amount: 29.0,
+    date: "2024-01-15",
+    status: "completed",
+    invoiceUrl: "/invoices/inv_001.pdf",
+    description: "Monthly subscription payment",
+    paymentMethod: "**** 4242",
+    refundable: false,
+  },
+  {
+    id: "inv_002",
+    type: "addon",
+    itemName: "Extra Storage Pack",
+    amount: 19.0,
+    date: "2024-01-10",
+    status: "completed",
+    invoiceUrl: "/invoices/inv_002.pdf",
+    description: "50GB additional storage",
+    paymentMethod: "**** 4242",
+    refundable: true,
+  },
+  {
+    id: "inv_003",
+    type: "one-time",
+    itemName: "Premium Templates",
+    amount: 49.0,
+    date: "2024-01-05",
+    status: "completed",
+    invoiceUrl: "/invoices/inv_003.pdf",
+    description: "Access to 100+ premium templates",
+    paymentMethod: "PayPal",
+    refundable: true,
+  },
+  {
+    id: "inv_004",
+    type: "subscription",
+    itemName: "Pro Plan - Monthly",
+    amount: 29.0,
+    date: "2023-12-15",
+    status: "completed",
+    invoiceUrl: "/invoices/inv_004.pdf",
+    description: "Monthly subscription payment",
+    paymentMethod: "**** 4242",
+    refundable: false,
+  },
+  {
+    id: "inv_005",
+    type: "subscription",
+    itemName: "Starter Plan - Monthly",
+    amount: 9.0,
+    date: "2023-11-15",
+    status: "refunded",
+    description: "Monthly subscription payment (refunded due to upgrade)",
+    paymentMethod: "**** 4242",
+    refundable: false,
+  },
+];
+
+export const paymentMethods = [
+  {
+    id: "pm_1",
+    type: "card",
+    last4: "4242",
+    brand: "Visa",
+    expiryMonth: 12,
+    expiryYear: 2027,
+    isDefault: true,
+  },
+  {
+    id: "pm_2",
+    type: "paypal",
+    email: "user@example.com",
+    isDefault: false,
+  },
+];
+
+export const subscriptionTabs = [
+    { id: 'overview', name: 'Overview', icon: Package },
+    { id: 'billing', name: 'Billing History', icon: Receipt },
+    { id: 'payment', name: 'Payment Methods', icon: CreditCard },
+    { id: 'plans', name: 'Change Plan', icon: Settings }
   ];
