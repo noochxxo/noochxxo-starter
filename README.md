@@ -85,7 +85,7 @@ User Action → Server Action → Service Class → Database
 ### 1. Clone and Install
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/noochxxo/noochxxo-starter.git
 cd noochxxo-starter
 pnpm install
 ```
